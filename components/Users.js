@@ -4,8 +4,6 @@ import {View, Text, Button, TouchableOpacity} from 'react-native'
 import {getUsers} from "../services/api.service";
 import User from "./User";
 
-
-
 const Users = (props) => {
     console.log(props);
     let {navigation} = props

@@ -6,17 +6,18 @@ import { StyleSheet, Text, View } from 'react-native';
 import {createStackNavigator} from "@react-navigation/stack";
 import {NavigationContainer} from "@react-navigation/native";
 import UserDetails from "./screens/UserDetails";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import UsersPageNavigator from "./screens/UsersPageNavigator";
 
-let StackNavigator = createStackNavigator()
+let BottomTabNavigator = createBottomTabNavigator()
 
 export default function App() {
   return (
       <NavigationContainer>
-          <StackNavigator.Navigator initialRouteName="Users page">
-              <StackNavigator.Screen name={'Home'} component={Home}/>
-              <StackNavigator.Screen name={'Users page'} component={Users}/>
-              <StackNavigator.Screen name={'uDetails'} component={UserDetails}/>
-          </StackNavigator.Navigator>
+          <BottomTabNavigator.Navigator>
+                <BottomTabNavigator.Screen name={'users'} component={UsersPageNavigator}/>
+                <BottomTabNavigator.Screen name={'home'} component={Home}/>
+          </BottomTabNavigator.Navigator>
       </NavigationContainer>
   )
 
